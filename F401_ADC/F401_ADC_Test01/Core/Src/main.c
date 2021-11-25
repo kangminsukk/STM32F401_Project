@@ -32,11 +32,11 @@
 #define HIGH	1
 #define MIN_COUNT	0
 #define INITIALIZE	0
-#define OLD_BUTTON	0
-#define FIRST_BUTTON	1
+#define RELEASED_BUTTON	0
+#define PRESSED_BUTTON	1
 #define PRESS	0
 #define RELEASE	1
-#define INTERRUPT_IN	1
+#define INTERRUPT_OCCURRED	1
 #define INTERRUPT_WAITING	0
 #define	FND_COM_LEFT_CLEAR		HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_SET); \
 								HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_RESET); \
@@ -230,14 +230,14 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	          /*-----------------BUTTON CTRL OR ADC_Value CTRL----------------------*/
-	  if((HAL_GPIO_ReadPin(User_Button_GPIO_Port, User_Button_Pin)==PRESS)&&(User_Button_Status == OLD_BUTTON))
+	  if((HAL_GPIO_ReadPin(User_Button_GPIO_Port, User_Button_Pin)==PRESS)&&(User_Button_Status == RELEASED_BUTTON))
 	  {
-		  User_Button_Status = FIRST_BUTTON;
+		  User_Button_Status = PRESSED_BUTTON;
 
 		  Button_Count++;
 		  if(Button_Count > MIN_COUNT)
 		  {
-			  if(g_ADC1_Status == INTERRUPT_IN)
+			  if(g_ADC1_Status == INTERRUPT_OCCURRED)
 			  {
 				  ADC1_VALUE(g_ADC_Value);
 				  g_ADC1_Status = INTERRUPT_WAITING;
@@ -248,7 +248,7 @@ int main(void)
 	  else if(HAL_GPIO_ReadPin(User_Button_GPIO_Port, User_Button_Pin)==RELEASE)
 	  {
 		  Button_Count = INITIALIZE;
-		  User_Button_Status = OLD_BUTTON;
+		  User_Button_Status = RELEASED_BUTTON;
 
 		  HAL_ADC_Start_IT(&hadc1);
 	  }    

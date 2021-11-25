@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   00006d3f  00000000  00000000  0003e1b3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008b41d  00000000  00000000  00044ef2  2**0
+ 18 .debug_str    0008b42a  00000000  00000000  00044ef2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000d030f  2**0
+ 19 .comment      00000053  00000000  00000000  000d031c  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00001580  00000000  00000000  000d0364  2**2
+ 20 .debug_frame  00001580  00000000  00000000  000d0370  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -614,7 +614,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	          /*-----------------BUTTON CTRL OR ADC_Value CTRL----------------------*/
-	  if((HAL_GPIO_ReadPin(User_Button_GPIO_Port, User_Button_Pin)==PRESS)&&(User_Button_Status == OLD_BUTTON))
+	  if((HAL_GPIO_ReadPin(User_Button_GPIO_Port, User_Button_Pin)==PRESS)&&(User_Button_Status == RELEASED_BUTTON))
  80006e2:	f44f 5100 	mov.w	r1, #8192	; 0x2000
  80006e6:	4821      	ldr	r0, [pc, #132]	; (800076c <main+0xac>)
  80006e8:	f001 fae8 	bl	8001cbc <HAL_GPIO_ReadPin>
@@ -626,7 +626,7 @@ int main(void)
  80006f6:	2b00      	cmp	r3, #0
  80006f8:	d11a      	bne.n	8000730 <main+0x70>
 	  {
-		  User_Button_Status = FIRST_BUTTON;
+		  User_Button_Status = PRESSED_BUTTON;
  80006fa:	4b1d      	ldr	r3, [pc, #116]	; (8000770 <main+0xb0>)
  80006fc:	2201      	movs	r2, #1
  80006fe:	701a      	strb	r2, [r3, #0]
@@ -643,7 +643,7 @@ int main(void)
  800070e:	2b00      	cmp	r3, #0
  8000710:	d020      	beq.n	8000754 <main+0x94>
 		  {
-			  if(g_ADC1_Status == INTERRUPT_IN)
+			  if(g_ADC1_Status == INTERRUPT_OCCURRED)
  8000712:	4b19      	ldr	r3, [pc, #100]	; (8000778 <main+0xb8>)
  8000714:	781b      	ldrb	r3, [r3, #0]
  8000716:	2b01      	cmp	r3, #1
@@ -678,7 +678,7 @@ int main(void)
  8000740:	4b0c      	ldr	r3, [pc, #48]	; (8000774 <main+0xb4>)
  8000742:	2200      	movs	r2, #0
  8000744:	601a      	str	r2, [r3, #0]
-		  User_Button_Status = OLD_BUTTON;
+		  User_Button_Status = RELEASED_BUTTON;
  8000746:	4b0a      	ldr	r3, [pc, #40]	; (8000770 <main+0xb0>)
  8000748:	2200      	movs	r2, #0
  800074a:	701a      	strb	r2, [r3, #0]
@@ -699,7 +699,7 @@ int main(void)
  800075c:	4694      	mov	ip, r2
  800075e:	4618      	mov	r0, r3
  8000760:	f000 f810 	bl	8000784 <FND_SEG_DISP.7822>
-	  if((HAL_GPIO_ReadPin(User_Button_GPIO_Port, User_Button_Pin)==PRESS)&&(User_Button_Status == OLD_BUTTON))
+	  if((HAL_GPIO_ReadPin(User_Button_GPIO_Port, User_Button_Pin)==PRESS)&&(User_Button_Status == RELEASED_BUTTON))
  8000764:	e7bd      	b.n	80006e2 <main+0x22>
  8000766:	bf00      	nop
  8000768:	20000034 	.word	0x20000034

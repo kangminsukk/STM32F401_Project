@@ -27,6 +27,8 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+#define TIM3_IT_OCCURRED 	1
+#define TIM3_IT_WAITING		0
 #define	FND_COM_LEFT_CLEAR		HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_SET); \
 								HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_RESET); \
 								HAL_GPIO_WritePin(FND_DOTC_PORT_GPIO_Port, FND_DOTC_PORT_Pin, GPIO_PIN_SET);\
@@ -228,18 +230,13 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  if(g_TIM3_Status == 1)
+	  if(g_TIM3_Status == TIM3_IT_OCCURRED)
 	  {
-		  g_TIM3_Status = 0;
+		  g_TIM3_Status = TIM3_IT_WAITING;
 
-		  if(g_ADC1_Status == 1)
-		  {
-			  ADC1_VALUE(g_ADC_Value);
+		  ADC1_VALUE(g_ADC_Value);
 
-			  HAL_ADC_Start_IT(&hadc1);
-
-			  g_ADC1_Status = 0;
-		  }
+		  HAL_ADC_Start_IT(&hadc1);
 	  }
 	  FND_SEG_DISP(FND_disp);
   }
@@ -439,8 +436,6 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
-	g_ADC1_Status = 1;
-
 	g_ADC_Value = HAL_ADC_GetValue(&hadc1);
 }
 
