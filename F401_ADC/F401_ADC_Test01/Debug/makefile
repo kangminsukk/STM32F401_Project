@@ -61,8 +61,8 @@ all: main-build
 main-build: F401_ADC_Test01.elf secondary-outputs
 
 # Tool invocations
-F401_ADC_Test01.elf: $(OBJS) $(USER_OBJS) C:\02_My\ Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "F401_ADC_Test01.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_ADC_Test01.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+F401_ADC_Test01.elf: $(OBJS) $(USER_OBJS) C:\02_My\ Project\01_MCU\Project\STM32F4_Project\STM32F401RE_project\F401_ADC\F401_ADC_Test01\STM32F401RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "F401_ADC_Test01.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_Project\STM32F401RE_project\F401_ADC\F401_ADC_Test01\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_ADC_Test01.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
