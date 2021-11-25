@@ -1,0 +1,35 @@
+15:53:01 **** Incremental Build of configuration Debug for project USART_Test ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:103:4: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  103 |    printf("Hello, world!%7d\r\n", HAL_GetTick());
+      |    ^~~~~~
+../Core/Src/main.c:103:4: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/main.c:22:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   21 | #include "main.h"
+  +++ |+#include <stdio.h>
+   22 | 
+../Core/Src/main.c:103:27: warning: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  103 |    printf("Hello, world!%7d\r\n", HAL_GetTick());
+      |                         ~~^       ~~~~~~~~~~~~~
+      |                           |       |
+      |                           int     uint32_t {aka long unsigned int}
+      |                         %7ld
+arm-none-eabi-gcc -o "USART_Test.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_USART_Toggle\USART_Test\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="USART_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: USART_Test.elf
+ 
+arm-none-eabi-size   USART_Test.elf 
+arm-none-eabi-objdump -h -S  USART_Test.elf  > "USART_Test.list"
+arm-none-eabi-objcopy  -O binary  USART_Test.elf  "USART_Test.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11980	    120	   1664	  13764	   35c4	USART_Test.elf
+Finished building: default.size.stdout
+ 
+Finished building: USART_Test.bin
+ 
+Finished building: USART_Test.list
+ 
+
+15:53:04 Build Finished. 0 errors, 3 warnings. (took 3s.156ms)
+

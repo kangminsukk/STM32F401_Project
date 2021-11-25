@@ -1,0 +1,333 @@
+!SESSION 2021-11-18 14:35:26.172 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-18 14:35:43.813
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-18 14:35:43.954
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-18 14:35:59.577
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-18 14:36:11.291
+!MESSAGE Indexed 'F401_ADC_Test01' (24 sources, 55 headers) in 10.6 sec: 6,273 declarations; 24,669 references; 16 unresolved inclusions; 376 syntax errors; 3,277 unresolved names (9.6%)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2021-11-18 14:47:22.742
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:151)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:108)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:96)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:307)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2021-11-18 14:47:22.742
+!MESSAGE C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:151)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:108)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:96)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:307)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2021-11-18 14:47:34.788
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:151)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:108)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:96)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:307)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2021-11-18 14:47:34.788
+!MESSAGE C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:151)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:108)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:96)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:307)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui 4 0 2021-11-18 18:29:52.296
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.AwtEnvironment.getShell(AwtEnvironment.java:281)
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.SwtInputBlocker.block(SwtInputBlocker.java:98)
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.AwtEnvironment.invokeAwt(AwtEnvironment.java:179)
+	at com.st.stm32cube.common.mx.oss.core.awtswtbridge.EmbeddedSwingComposite$3.widgetDisposed(EmbeddedSwingComposite.java:244)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:127)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4209)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1043)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1067)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1048)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:800)
+	at org.eclipse.swt.widgets.Composite.releaseChildren(Composite.java:921)
+	at org.eclipse.swt.widgets.Canvas.releaseChildren(Canvas.java:168)
+	at org.eclipse.swt.widgets.Decorations.releaseChildren(Decorations.java:713)
+	at org.eclipse.swt.widgets.Shell.releaseChildren(Shell.java:1356)
+	at org.eclipse.swt.widgets.Widget.release(Widget.java:803)
+	at org.eclipse.swt.widgets.Widget.dispose(Widget.java:416)
+	at org.eclipse.swt.widgets.Decorations.dispose(Decorations.java:392)
+	at org.eclipse.swt.widgets.Display.release(Display.java:3675)
+	at org.eclipse.swt.graphics.Device.dispose(Device.java:321)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:168)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:653)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:590)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1461)
+!SESSION 2021-11-19 10:13:02.183 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-19 10:13:32.526
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-19 10:13:32.698
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-19 10:13:50.677
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-19 12:40:07.571
+!MESSAGE Indexed 'F401_TIM_Toggle' (594 sources, 401 headers) in 87.7 sec: 54,928 declarations; 374,331 references; 23 unresolved inclusions; 280 syntax errors; 6,566 unresolved names (1.5%)
+!SESSION 2021-11-19 14:42:23.562 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-19 14:42:38.092
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-19 14:42:38.217
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-19 14:42:51.669
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-19 14:42:59.004
+!MESSAGE Indexed 'F401_ADC_Test01' (24 sources, 102 headers) in 6.14 sec: 8,122 declarations; 31,174 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.37%)
+!SESSION 2021-11-22 09:25:50.638 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-22 09:26:20.325
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-22 09:26:20.523
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-22 09:26:37.661
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-22 09:26:46.787
+!MESSAGE Indexed 'F401_ADC_Test01' (24 sources, 102 headers) in 7.75 sec: 8,125 declarations; 31,240 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.37%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-22 10:54:26.789
+!MESSAGE Indexed 'F401_TIM_Toggle_test' (21 sources, 99 headers) in 8.64 sec: 8,281 declarations; 41,302 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-22 12:54:51.181
+!MESSAGE Indexed 'F401_TIM_Toggle_test' (21 sources, 99 headers) in 5.36 sec: 8,281 declarations; 41,302 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.3%)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2021-11-22 16:06:14.355
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:151)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:108)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:96)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:307)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2021-11-22 16:06:14.355
+!MESSAGE C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:151)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:108)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:96)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:307)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-22 18:15:40.743
+!MESSAGE Indexed 'F401_ADC_Test02' (24 sources, 101 headers) in 9.88 sec: 8,802 declarations; 44,859 references; 6 unresolved inclusions; 404 syntax errors; 1,396 unresolved names (2.5%)
+!SESSION 2021-11-23 09:25:01.043 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test02\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test02\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-23 09:27:03.347
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-23 09:27:03.518
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-23 09:27:19.550
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-23 09:27:28.825
+!MESSAGE Indexed 'F401_ADC_Test02' (24 sources, 102 headers) in 6.87 sec: 8,826 declarations; 47,142 references; 2 unresolved inclusions; 45 syntax errors; 149 unresolved names (0.27%)
+!SESSION 2021-11-23 17:48:46.488 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-23 17:49:15.606
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-23 17:49:15.794
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-23 17:49:34.862
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2021-11-23 18:18:36.837 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-23 18:18:52.649
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-23 18:18:52.805
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-23 18:19:07.806
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2021-11-24 10:04:23.610 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-24 10:04:50.358
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-24 10:04:50.529
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-24 10:05:08.504
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-24 10:05:19.196
+!MESSAGE Indexed 'F401_ADC_Test01' (24 sources, 102 headers) in 8.13 sec: 8,127 declarations; 31,281 references; 2 unresolved inclusions; 42 syntax errors; 147 unresolved names (0.37%)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2021-11-24 13:30:21.282
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:151)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:108)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:96)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:307)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2021-11-24 13:30:21.282
+!MESSAGE C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\Debug\F401_ADC_Test01.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:131)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:329)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:151)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:108)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:96)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:307)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2021-11-25 09:32:59.671 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\F401_ADC_Test01\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-25 09:33:24.063
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-25 09:33:24.239
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_ADC\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-25 09:33:40.114
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-25 09:33:50.039
+!MESSAGE Indexed 'F401_ADC_Test01' (24 sources, 107 headers) in 6.91 sec: 8,167 declarations; 30,908 references; 2 unresolved inclusions; 366 syntax errors; 147 unresolved names (0.37%)

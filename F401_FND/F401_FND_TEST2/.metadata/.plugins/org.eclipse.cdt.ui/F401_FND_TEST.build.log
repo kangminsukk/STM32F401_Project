@@ -1,0 +1,10 @@
+10:31:13 **** Incremental Build of configuration Debug for project F401_FND_TEST ****
+make -j4 all 
+arm-none-eabi-size   F401_FND_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6892	     20	   1572	   8484	   2124	F401_FND_TEST.elf
+Finished building: default.size.stdout
+ 
+
+10:31:14 Build Finished. 0 errors, 0 warnings. (took 711ms)
+

@@ -1,0 +1,293 @@
+15:19:39 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7144	     20	   1572	   8736	   2220	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+ 
+Finished building: F401_FND_TEST2.list
+ 
+15:33:57 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7144	     20	   1572	   8736	   2220	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+Finished building: F401_FND_TEST2.list
+ 
+ 
+15:35:21 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+   text	   data	    bss	    dec	    hex	filename
+   7144	     20	   1572	   8736	   2220	F401_FND_TEST2.elf
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.list
+Finished building: F401_FND_TEST2.bin
+ 
+ 
+15:41:14 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7172	     20	   1572	   8764	   223c	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.list
+Finished building: F401_FND_TEST2.bin
+ 
+ 
+15:41:57 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7160	     20	   1572	   8752	   2230	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+Finished building: F401_FND_TEST2.list
+ 
+ 
+15:43:05 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7160	     20	   1572	   8752	   2230	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+Finished building: F401_FND_TEST2.list
+ 
+ 
+15:43:32 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7152	     20	   1572	   8744	   2228	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+ 
+Finished building: F401_FND_TEST2.list
+ 
+15:47:20 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7144	     20	   1572	   8736	   2220	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+ 
+Finished building: F401_FND_TEST2.list
+ 
+15:47:59 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7144	     20	   1572	   8736	   2220	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+Finished building: F401_FND_TEST2.list
+ 
+ 
+15:49:07 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7144	     20	   1572	   8736	   2220	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+Finished building: F401_FND_TEST2.list
+ 
+ 
+15:53:53 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7144	     20	   1572	   8736	   2220	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.list
+Finished building: F401_FND_TEST2.bin
+ 
+ 
+15:54:27 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7144	     20	   1572	   8736	   2220	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+Finished building: F401_FND_TEST2.list
+ 
+ 
+15:55:04 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7144	     20	   1572	   8736	   2220	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+Finished building: F401_FND_TEST2.list
+ 
+ 
+15:55:54 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7144	     20	   1572	   8736	   2220	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+Finished building: F401_FND_TEST2.list
+ 
+ 
+15:57:28 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7140	     20	   1572	   8732	   221c	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+Finished building: F401_FND_TEST2.list
+ 
+ 
+15:58:09 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_FND_TEST2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\F401_FND_TEST2\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_FND_TEST2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_FND_TEST2.elf
+ 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+arm-none-eabi-objdump -h -S  F401_FND_TEST2.elf  > "F401_FND_TEST2.list"
+arm-none-eabi-objcopy  -O binary  F401_FND_TEST2.elf  "F401_FND_TEST2.bin"
+   text	   data	    bss	    dec	    hex	filename
+   7140	     20	   1572	   8732	   221c	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+Finished building: F401_FND_TEST2.bin
+Finished building: F401_FND_TEST2.list
+ 
+ 
+16:52:38 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7140	     20	   1572	   8732	   221c	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+16:52:41 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7140	     20	   1572	   8732	   221c	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 
+16:53:13 **** Incremental Build of configuration Debug for project F401_FND_TEST2 ****
+make -j4 all 
+arm-none-eabi-size   F401_FND_TEST2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7140	     20	   1572	   8732	   221c	F401_FND_TEST2.elf
+Finished building: default.size.stdout
+ 

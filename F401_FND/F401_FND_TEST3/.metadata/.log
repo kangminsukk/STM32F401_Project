@@ -1,0 +1,21 @@
+!SESSION 2021-09-27 16:05:03.200 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-09-27 16:05:26.088
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-09-27 16:05:26.198
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_FND\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-09-27 16:05:32.000
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-09-27 16:07:31.448
+!MESSAGE Indexed 'F401_FND_TEST3' (21 sources, 81 headers) in 6.37 sec: 4,248 declarations; 17,696 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0091%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-09-27 16:15:13.864
+!MESSAGE Indexed 'F401_FND_TEST2' (21 sources, 98 headers) in 5.7 sec: 7,577 declarations; 25,182 references; 6 unresolved inclusions; 284 syntax errors; 1,115 unresolved names (3.3%)

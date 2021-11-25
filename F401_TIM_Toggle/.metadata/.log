@@ -1,0 +1,22 @@
+!SESSION 2021-11-19 13:20:03.542 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_TIM_Toggle\F401_TIM_Toggle_test\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_TIM_Toggle\F401_TIM_Toggle_test\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-19 13:20:22.181
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-19 13:20:22.353
+!MESSAGE Log4j initialized with config file C:\02_My Project\01_MCU\Project\STM32F4_TEST\STM32F401\F401_TIM_Toggle\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-19 13:20:28.726
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-19 13:20:43.436
+!MESSAGE Indexed 'F401_TIM_Toggle_test' (21 sources, 98 headers) in 9.25 sec: 8,268 declarations; 39,865 references; 6 unresolved inclusions; 311 syntax errors; 1,143 unresolved names (2.3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-19 13:23:28.534
+!MESSAGE Indexed 'F401_TIM_Toggle_test' (21 sources, 99 headers) in 5.29 sec: 8,279 declarations; 41,291 references; 2 unresolved inclusions; 42 syntax errors; 149 unresolved names (0.3%)
