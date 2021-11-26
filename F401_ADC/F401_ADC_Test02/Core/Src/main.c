@@ -112,7 +112,7 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint8_t g_TIM3_Status = 1;
+uint8_t g_TIM3_Status = 0;
 uint32_t g_ADC_Value;
 unsigned char g_ADC1_Status = 0;
 unsigned char Button_Status = 0;
