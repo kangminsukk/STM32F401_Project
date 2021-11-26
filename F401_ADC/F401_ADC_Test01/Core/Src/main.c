@@ -232,17 +232,10 @@ int main(void)
 	          /*-----------------BUTTON CTRL OR ADC_Value CTRL----------------------*/
 	  if((HAL_GPIO_ReadPin(User_Button_GPIO_Port, User_Button_Pin) == PRESS_USER_BUTTON)&&(User_Button_Status == RELEASED_BUTTON)) 		// if button is push and user_button_status is released_button
 	  {
-		  HAL_ADC_Start_IT(&hadc1);
-
 		  Button_Count++;
 		  if(Button_Count > MIN_COUNT) 				// if button_count greater than min_count
 		  {
-			  ADC1_VALUE(g_ADC_Value);
-//			  if(g_ADC1_Status == INTERRUPT_OCCURRED)								// if g_ADC1_Status occurred INTERRUPT
-//			  {
-//				  ADC1_VALUE(g_ADC_Value);
-//				  g_ADC1_Status = INTERRUPT_WAITING;
-//			  }
+			  HAL_ADC_Start_IT(&hadc1);
 		  }
 		  User_Button_Status = PRESSED_BUTTON;
 	  }
@@ -252,6 +245,14 @@ int main(void)
 		  Button_Count = INITIALIZE;
 		  User_Button_Status = RELEASED_BUTTON;
 	  }    
+
+
+  /*--------------ADC_Value calc--------------*/
+	  if(g_ADC1_Status == INTERRUPT_OCCURRED)								// if g_ADC1_Status occurred INTERRUPT
+	  {
+		  ADC1_VALUE(g_ADC_Value);
+		  g_ADC1_Status = INTERRUPT_WAITING;
+	  }
 
 	  	  	  /*--------------------FND_OUTPUT--------------------*/
 	  FND_SEG_DISP(FND_disp);
@@ -413,7 +414,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 {
-//	g_ADC1_Status = INTERRUPT_OCCURRED;
+	g_ADC1_Status = INTERRUPT_OCCURRED;
 
 	g_ADC_Value = HAL_ADC_GetValue(&hadc1);
 }
