@@ -665,30 +665,29 @@ int main(void)
  8000730:	4b0e      	ldr	r3, [pc, #56]	; (800076c <main+0xac>)
  8000732:	2200      	movs	r2, #0
  8000734:	701a      	strb	r2, [r3, #0]
-	  }    
+	  }
 
-
-  /*--------------ADC_Value calc--------------*/
-	  if(g_ADC1_Status == INTERRUPT_OCCURRED)								// if g_ADC1_Status occurred INTERRUPT
+		  /*--------------ADC_Value calc--------------*/
+			  if(g_ADC1_Status == INTERRUPT_OCCURRED)								// if g_ADC1_Status occurred INTERRUPT
  8000736:	4b0f      	ldr	r3, [pc, #60]	; (8000774 <main+0xb4>)
  8000738:	781b      	ldrb	r3, [r3, #0]
  800073a:	2b01      	cmp	r3, #1
  800073c:	d109      	bne.n	8000752 <main+0x92>
-	  {
-		  ADC1_VALUE(g_ADC_Value);
+			  {
+				  ADC1_VALUE(g_ADC_Value);
  800073e:	4b0e      	ldr	r3, [pc, #56]	; (8000778 <main+0xb8>)
  8000740:	681b      	ldr	r3, [r3, #0]
  8000742:	1d3a      	adds	r2, r7, #4
  8000744:	4694      	mov	ip, r2
  8000746:	4618      	mov	r0, r3
  8000748:	f000 f878 	bl	800083c <ADC1_VALUE.7825>
-		  g_ADC1_Status = INTERRUPT_WAITING;
+				  g_ADC1_Status = INTERRUPT_WAITING;
  800074c:	4b09      	ldr	r3, [pc, #36]	; (8000774 <main+0xb4>)
  800074e:	2200      	movs	r2, #0
  8000750:	701a      	strb	r2, [r3, #0]
-	  }
+			  }
 
-	  	  	  /*--------------------FND_OUTPUT--------------------*/
+	/*--------------------FND_OUTPUT--------------------*/
 	  FND_SEG_DISP(FND_disp);
  8000752:	4b0a      	ldr	r3, [pc, #40]	; (800077c <main+0xbc>)
  8000754:	781b      	ldrb	r3, [r3, #0]
