@@ -247,11 +247,11 @@ int main(void)
 	  }
 
 		  /*--------------ADC_Value calc--------------*/
-	  if(g_ADC1_Status == INTERRUPT_OCCURRED)								// if g_ADC1_Status occurred INTERRUPT
-	  {
-		  ADC1_VALUE(g_ADC_Value);
-		  g_ADC1_Status = INTERRUPT_WAITING;
-	  }
+			  if(g_ADC1_Status == INTERRUPT_OCCURRED)								// if g_ADC1_Status occurred INTERRUPT
+			  {
+				  ADC1_VALUE(g_ADC_Value);
+				  g_ADC1_Status = INTERRUPT_WAITING;
+			  }
 
 	/*--------------------FND_OUTPUT--------------------*/
 	  FND_SEG_DISP(FND_disp);
