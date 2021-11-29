@@ -225,7 +225,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	          /*-----------------BUTTON CTRL OR ADC_Value CTRL----------------------*/
+	          /*-----------------BUTTON CTRL OR ADC_IT_enable CTRL----------------------*/
 	  if((HAL_GPIO_ReadPin(User_Button_GPIO_Port, User_Button_Pin) == PRESS_USER_BUTTON)&&(User_Button_Status == RELEASED_BUTTON)) 		// if button is push and user_button_status is released_button
 	  {
 		  Button_Count++;
@@ -252,7 +252,7 @@ int main(void)
 
 	/*--------------------TIM_FND_OUTPUT--------------------*/
 
-		if(FND_Status == LEFT_ON)
+		if(FND_Status == LEFT_ON)                            
 		{
 			FND_COM_LEFT_CLEAR
 			NUM_DISPLAY(FND_10disp);
