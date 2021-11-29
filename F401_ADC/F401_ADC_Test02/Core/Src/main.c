@@ -241,7 +241,7 @@ int main(void)
 
 	    HAL_ADC_Start_IT(&hadc1);
 
-      g_ADC1_Status = 1;
+      g_ADC1_Status = 0;
       }
 	  }
 	  FND_SEG_DISP(FND_disp);
