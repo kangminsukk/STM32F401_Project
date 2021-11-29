@@ -113,7 +113,6 @@ static void MX_TIM3_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint8_t g_TIM3_Status = 0;
-uint8_t g_ADC1_Status = 0;
 uint32_t g_ADC_Value;
 unsigned char g_ADC1_Status = 0;
 unsigned char Button_Status = 0;
@@ -235,11 +234,13 @@ int main(void)
 	  {
 		  g_TIM3_Status = TIM3_IT_WAITING;
 
-      if(g_ADC1_Status == 0)
+      if(g_ADC1_Status == 1)
 		  {
       ADC1_VALUE(g_ADC_Value);
-      
+
 	    HAL_ADC_Start_IT(&hadc1);
+
+      g_ADC1_Status = 0;
       }
 	  }
 	  FND_SEG_DISP(FND_disp);
