@@ -235,11 +235,13 @@ int main(void)
 	  {
 		  g_TIM3_Status = TIM3_IT_WAITING;
 
-      if(g_ADC1_Status == 0)
+      if(g_ADC1_Status == 1)
 		  {
       ADC1_VALUE(g_ADC_Value);
-      
+
 	    HAL_ADC_Start_IT(&hadc1);
+
+      g_ADC1_Status = 1;
       }
 	  }
 	  FND_SEG_DISP(FND_disp);
