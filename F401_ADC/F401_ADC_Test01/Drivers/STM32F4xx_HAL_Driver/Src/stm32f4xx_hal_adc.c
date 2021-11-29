@@ -1212,6 +1212,7 @@ void HAL_ADC_IRQHandler(ADC_HandleTypeDef* hadc)
   if(tmp1 && tmp2)
   {
     /* Update state machine on conversion status if not in error state */
+    if (HAL_IS_BIT_CLR(hadc->State, HAL_ADC_STATE_ERROR_INTERNAL))
     {
       /* Set ADC state */
       SET_BIT(hadc->State, HAL_ADC_STATE_REG_EOC); 

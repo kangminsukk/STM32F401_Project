@@ -29,7 +29,8 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define HIGH	1
+#define LEFT_ON	1
+#define RIGHT_ON	2
 #define MIN_BUTTON_COUNT	0
 #define INITIALIZE	0
 #define RELEASED_BUTTON	0
@@ -102,6 +103,8 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 
+TIM_HandleTypeDef htim3;
+
 /* USER CODE BEGIN PV */
 /* USER CODE END PV */
 
@@ -109,6 +112,7 @@ ADC_HandleTypeDef hadc1;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -122,7 +126,7 @@ unsigned char Button_Status = 0;
 uint32_t Button_Count = 0;
 uint8_t FND_10disp = 0;
 uint8_t FND_1disp = 0;
-uint8_t FND_Disp = 0;
+uint8_t FND_Status = 0;
 
 /* USER CODE END 0 */
 
@@ -173,29 +177,19 @@ int main(void)
 		}
 	}
 
-	void FND_SEG_DISP(uint8_t FND_Seg)
-	{
-		FND_10disp = FND_Seg / 10;
-		FND_1disp = FND_Seg % 10;
-
-		FND_COM_LEFT_CLEAR
-		NUM_DISPLAY(FND_10disp);
-		HAL_Delay(1);
-
-		FND_COM_RIGHT_CLEAR
-		NUM_DISPLAY(FND_1disp);
-		HAL_Delay(1);
-	}
-
 	void Calculate_ADC1(uint32_t ADC1_Value)
 	{
+		uint8_t FND_Disp = 0;
 		float FND_Value = 0;
 		float V_REF = 3.3f;
 		unsigned int ADC_Resolution = 4096;
 
-    FND_Value = ((V_REF * ADC1_Value) / ADC_Resolution);
+		FND_Value = ((V_REF * ADC1_Value) / ADC_Resolution);
 
 		FND_Disp = FND_Value * 10;
+
+		FND_10disp = FND_Disp / 10;
+		FND_1disp = FND_Disp % 10;
 	}
   /* USER CODE END 1 */
 
@@ -218,8 +212,10 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC1_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_IT(&hadc1);
+  HAL_TIM_Base_Start_IT(&htim3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -254,8 +250,20 @@ int main(void)
 		  g_ADC1_Status = INTERRUPT_WAITING;
 	  }
 
-	/*--------------------FND_OUTPUT--------------------*/
-	  FND_SEG_DISP(FND_Disp);
+	/*--------------------TIM_FND_OUTPUT--------------------*/
+
+		if(FND_Status == LEFT_ON)
+		{
+			FND_COM_LEFT_CLEAR
+			NUM_DISPLAY(FND_10disp);
+		}
+
+		else if(FND_Status == RIGHT_ON)
+		{
+			FND_COM_RIGHT_CLEAR
+			NUM_DISPLAY(FND_1disp);
+		}
+
   }
   /* USER CODE END 3 */
 }
@@ -355,6 +363,51 @@ static void MX_ADC1_Init(void)
 }
 
 /**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 840-1;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 100-1;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -417,6 +470,22 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	g_ADC1_Status = INTERRUPT_OCCURRED;
 
 	g_ADC_Value = HAL_ADC_GetValue(&hadc1);
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(FND_Status == 0)
+	{
+		FND_Status = 1;
+	}
+
+	else if(FND_Status == 1)
+	{
+		FND_Status = 2;
+	}
+
+	else
+		FND_Status = 1;
 }
 /* USER CODE END 4 */
 
