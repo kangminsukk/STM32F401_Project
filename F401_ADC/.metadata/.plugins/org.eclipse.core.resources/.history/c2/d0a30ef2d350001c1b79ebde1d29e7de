@@ -474,18 +474,18 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if(FND_Status == INITIALIZE)
+	if(FND_Status == 0)
 	{
-		FND_Status = LEFT_ON;
+		FND_Status = 1;
 	}
 
-	else if(FND_Status == LEFT_ON)
+	else if(FND_Status == 1)
 	{
-		FND_Status = RIGHT_ON;
+		FND_Status = 2;
 	}
 
 	else
-		FND_Status = INITIALIZE;
+		FND_Status = 0;
 }
 /* USER CODE END 4 */
 
