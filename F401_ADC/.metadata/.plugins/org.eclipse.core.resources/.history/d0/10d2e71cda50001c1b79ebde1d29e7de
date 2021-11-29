@@ -252,7 +252,7 @@ int main(void)
 
 	/*--------------------TIM_FND_OUTPUT--------------------*/
 
-		if(FND_Status == LEFT_ON)
+		if(FND_Status == LEFT_ON)                            
 		{
 			FND_COM_LEFT_CLEAR
 			NUM_DISPLAY(FND_10disp);

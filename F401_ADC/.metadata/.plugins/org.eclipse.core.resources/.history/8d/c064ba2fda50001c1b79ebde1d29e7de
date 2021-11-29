@@ -252,17 +252,17 @@ int main(void)
 
 	/*--------------------TIM_FND_OUTPUT--------------------*/
 
-		if(FND_Status == LEFT_ON)
-		{
-			FND_COM_LEFT_CLEAR
-			NUM_DISPLAY(FND_10disp);
-		}
-
-		else if(FND_Status == RIGHT_ON)
-		{
-			FND_COM_RIGHT_CLEAR
-			NUM_DISPLAY(FND_1disp);
-		}
+//		if(FND_Status == LEFT_ON)
+//		{
+//			FND_COM_LEFT_CLEAR
+//			NUM_DISPLAY(FND_10disp);
+//		}
+//
+//		else if(FND_Status == RIGHT_ON)
+//		{
+//			FND_COM_RIGHT_CLEAR
+//			NUM_DISPLAY(FND_1disp);
+//		}
 
   }
   /* USER CODE END 3 */
@@ -477,11 +477,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	if(FND_Status == INITIALIZE)
 	{
 		FND_Status = LEFT_ON;
+		FND_COM_LEFT_CLEAR
+					NUM_DISPLAY(FND_10disp);
 	}
 
 	else if(FND_Status == LEFT_ON)
 	{
 		FND_Status = RIGHT_ON;
+		FND_COM_RIGHT_CLEAR
+					NUM_DISPLAY(FND_1disp);
 	}
 
 	else
