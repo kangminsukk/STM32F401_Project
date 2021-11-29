@@ -485,7 +485,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	}
 
 	else
-		FND_Status = 0;
+		FND_Status = 1;
 }
 /* USER CODE END 4 */
 
