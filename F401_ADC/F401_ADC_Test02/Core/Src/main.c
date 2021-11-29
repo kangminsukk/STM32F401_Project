@@ -119,7 +119,7 @@ unsigned char Button_Status = 0;
 uint32_t Button_Count = 0;
 uint8_t FND_10disp = 0;
 uint8_t FND_1disp = 0;
-uint8_t FND_disp = 0;
+uint8_t FND_Disp = 0;
 
 
 void NUM_DISPLAY(uint8_t Disp_Seg_Num)
@@ -176,15 +176,15 @@ void NUM_DISPLAY(uint8_t Disp_Seg_Num)
 		HAL_Delay(1);
 	}
 
-	void ADC1_VALUE(uint32_t ADC_Flag)
+	void Calculate_ADC1(uint32_t ADC1_Value)
 	{
-		float FND_Flag = 0;
+		float FND_Value = 0;
 		float V_REF = 3.3f;
 		unsigned int ADC_Resolution = 4096;
 
-		FND_Flag = V_REF / ADC_Resolution * ADC_Flag;
+    FND_Value = ((V_REF * ADC1_Value) / ADC_Resolution);
 
-		FND_disp = FND_Flag * 10;
+		FND_Disp = FND_Value * 10;
 	}
 /* USER CODE END 0 */
 
@@ -238,7 +238,7 @@ int main(void)
 
 		  if(g_ADC1_Status == 1)                        	  // if g_ADC1_Status is 1
 		  {
-			  ADC1_VALUE(g_ADC_Value);                        // adc_value calc
+			  Calculate_ADC1(g_ADC_Value);                        // adc_value calc
 
 			  HAL_ADC_Start_IT(&hadc1);                       // adc_interuppt enable
 
@@ -247,7 +247,7 @@ int main(void)
 	  }
 
    /*---------- FND OUTPUT ----------*/ 
-	  FND_SEG_DISP(FND_disp);                     
+	  FND_SEG_DISP(FND_Disp);                     
   }
   /* USER CODE END 3 */
 }
