@@ -231,19 +231,19 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-   /*--------- TIM and ADC INTERUPPT ---------*/ 
-	  if(g_TIM3_Status == TIM3_IT_OCCURRED)             // if TIM occurred interuppt 
+   /*--------- TIM and ADC INTERUPPT occurred ---------*/
+	  if(g_TIM3_Status == TIM3_IT_OCCURRED)             	  // if TIM occurred interuppt
 	  {
-		  g_TIM3_Status = TIM3_IT_WAITING;                // TIM is waiting interuppt
+		  g_TIM3_Status = TIM3_IT_WAITING;               	  // TIM is waiting interuppt
 
-      if(g_ADC1_Status == 1)                          // if g_ADC1_Status is 1
+		  if(g_ADC1_Status == 1)                        	  // if g_ADC1_Status is 1
 		  {
-      ADC1_VALUE(g_ADC_Value);                        // adc_value calc
+			  ADC1_VALUE(g_ADC_Value);                        // adc_value calc
 
-	    HAL_ADC_Start_IT(&hadc1);                       // adc_interuppt enable
+			  HAL_ADC_Start_IT(&hadc1);                       // adc_interuppt enable
 
-      g_ADC1_Status = 0;                              // g_ADC1_Status is 0
-      }
+			  g_ADC1_Status = 0;                              // g_ADC1_Status is 0
+		  }
 	  }
 
    /*---------- FND OUTPUT ----------*/ 
