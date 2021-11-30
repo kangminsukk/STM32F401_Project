@@ -29,10 +29,11 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define LEFT_ON	1
-#define RIGHT_ON	2
+#define FND_LEFT_ON	1
+#define FND_RIGHT_ON	2
 #define MIN_BUTTON_COUNT	0
-#define INITIALIZE	0
+#define BUTTON_COUNT_INITIALIZE	0
+#define FND_INITIALIZE	0
 #define RELEASED_BUTTON	0
 #define PRESSED_BUTTON	1
 #define PRESS_USER_BUTTON	0
@@ -114,11 +115,6 @@ static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
-
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
 uint8_t User_Button_Status = 0;
 uint32_t g_ADC_Value;
 unsigned char g_ADC1_Status = 0;
@@ -127,16 +123,10 @@ uint32_t Button_Count = 0;
 uint8_t FND_10disp = 0;
 uint8_t FND_1disp = 0;
 uint8_t FND_Status = 0;
+/* USER CODE END PFP */
 
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
-int main(void)
-{
-  /* USER CODE BEGIN 1 */
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
 	void NUM_DISPLAY(uint8_t Disp_Seg_Num)
 	{
 		switch(Disp_Seg_Num)
@@ -173,10 +163,19 @@ int main(void)
 			break;
 		default:
 			FND_SEG_NUM0_DISP
-				break;
+			break;
 		}
 	}
 
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
 	void Calculate_ADC1(uint32_t ADC1_Value)
 	{
 		uint8_t FND_Disp = 0;
@@ -239,9 +238,10 @@ int main(void)
 
 	  else if(HAL_GPIO_ReadPin(User_Button_GPIO_Port, User_Button_Pin)==RELEASE_USER_BUTTON)					// if button is release
 	  {
-		  Button_Count = INITIALIZE;
+		  Button_Count = BUTTON_COUNT_INITIALIZE;
 		  User_Button_Status = RELEASED_BUTTON;
 	  }
+
 
 		  /*--------------ADC_Value calc--------------*/
 	  if(g_ADC1_Status == INTERRUPT_OCCURRED)								// if g_ADC1_Status occurred INTERRUPT
@@ -249,21 +249,6 @@ int main(void)
 		  Calculate_ADC1(g_ADC_Value);
 		  g_ADC1_Status = INTERRUPT_WAITING;
 	  }
-
-	/*--------------------TIM_FND_OUTPUT--------------------*/
-
-		if(FND_Status == LEFT_ON)
-		{
-			FND_COM_LEFT_CLEAR
-			NUM_DISPLAY(FND_10disp);
-		}
-
-		else if(FND_Status == RIGHT_ON)
-		{
-			FND_COM_RIGHT_CLEAR
-			NUM_DISPLAY(FND_1disp);
-		}
-
   }
   /* USER CODE END 3 */
 }
@@ -474,18 +459,25 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if(FND_Status == INITIALIZE)
+	if(htim == &htim3)
 	{
-		FND_Status = LEFT_ON;
-	}
+		if(FND_Status == FND_INITIALIZE)
+		{
+			FND_Status = FND_LEFT_ON;
+			FND_COM_LEFT_CLEAR
+			NUM_DISPLAY(FND_10disp);
+		}
 
-	else if(FND_Status == LEFT_ON)
-	{
-		FND_Status = RIGHT_ON;
-	}
+		else if(FND_Status == FND_LEFT_ON)
+		{
+			FND_Status = FND_RIGHT_ON;
+			FND_COM_RIGHT_CLEAR
+			NUM_DISPLAY(FND_1disp);
+		}
 
-	else
-		FND_Status = INITIALIZE;
+		else
+			FND_Status = FND_INITIALIZE;
+	}
 }
 /* USER CODE END 4 */
 
