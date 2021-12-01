@@ -32,6 +32,8 @@
 #define FND_RIGHT_ON	2
 #define TIM3_IT_OCCURRED 	1
 #define TIM3_IT_WAITING		0
+#define ADC1_IT_OCCURRED 	1
+#define ADC1_IT_WAITING		0
 #define	FND_COM_LEFT_ON			HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_SET); \
 								HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_RESET); \
 								HAL_GPIO_WritePin(FND_DOTC_PORT_GPIO_Port, FND_DOTC_PORT_Pin, GPIO_PIN_SET);\
@@ -230,17 +232,16 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
    /*--------- TIM and ADC INTERUPPT occurred ---------*/
-	  if(g_TIM3_Status == TIM3_IT_OCCURRED)             	  // if TIM occurred interuppt
+	  if(g_TIM3_Status == TIM3_IT_OCCURRED)             	// if TIM occurred interuppt
 	  {
 		  g_TIM3_Status = TIM3_IT_WAITING;               	  // TIM is waiting interuppt
 
-		  if(g_ADC1_Status == 1)                        	  // if g_ADC1_Status is 1
-		  {
-			  Calculate_ADC1(g_ADC_Value);                        // adc_value calc
+		  if(g_ADC1_Status == ADC1_IT_OCCURRED)             // if g_ADC1_Status is occurred interuppt
+			  Calculate_ADC1(g_ADC_Value);                    // adc_value calc
 
 			  HAL_ADC_Start_IT(&hadc1);                       // adc_interuppt enable
 
-			  g_ADC1_Status = 0;                              // g_ADC1_Status is 0
+			  g_ADC1_Status = ADC1_IT_WAITING;                // g_ADC1_Status is waiting interuppt
 		  }
 	  }
   }
