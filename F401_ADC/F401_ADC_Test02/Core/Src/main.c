@@ -27,6 +27,9 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+#define FND_INITIALIZE 	0
+#define FND_LEFT_ON		1
+#define FND_RIGHT_ON	2
 #define TIM3_IT_OCCURRED 	1
 #define TIM3_IT_WAITING		0
 #define	FND_COM_LEFT_CLEAR		HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_SET); \
@@ -93,6 +96,7 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 
+TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 
 /* USER CODE BEGIN PV */
@@ -104,6 +108,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_TIM2_Init(void);
 /* USER CODE BEGIN PFP */
 
 
@@ -120,6 +125,8 @@ uint32_t Button_Count = 0;
 uint8_t FND_10disp = 0;
 uint8_t FND_1disp = 0;
 uint8_t FND_Disp = 0;
+uint8_t FND_Status = 0;
+
 
 
 void NUM_DISPLAY(uint8_t Disp_Seg_Num)
@@ -162,29 +169,18 @@ void NUM_DISPLAY(uint8_t Disp_Seg_Num)
 		}
 	}
 
-	void FND_SEG_DISP(uint8_t FND_Seg)
-	{
-		FND_10disp = FND_Seg / 10;
-		FND_1disp = FND_Seg % 10;
-
-		FND_COM_LEFT_CLEAR
-		NUM_DISPLAY(FND_10disp);
-		HAL_Delay(1);
-
-		FND_COM_RIGHT_CLEAR
-		NUM_DISPLAY(FND_1disp);
-		HAL_Delay(1);
-	}
-
 	void Calculate_ADC1(uint32_t ADC1_Value)
 	{
 		float FND_Value = 0;
 		float V_REF = 3.3f;
 		unsigned int ADC_Resolution = 4096;
 
-    FND_Value = ((V_REF * ADC1_Value) / ADC_Resolution);
+		FND_Value = ((V_REF * ADC1_Value) / ADC_Resolution);
 
 		FND_Disp = FND_Value * 10;
+
+		FND_10disp = FND_Disp / 10;
+		FND_1disp = FND_Disp % 10;
 	}
 /* USER CODE END 0 */
 
@@ -218,9 +214,11 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_TIM3_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_IT(&hadc1);
   HAL_TIM_Base_Start_IT(&htim3);
+  HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -246,8 +244,7 @@ int main(void)
 		  }
 	  }
 
-   /*---------- FND OUTPUT ----------*/ 
-	  FND_SEG_DISP(FND_Disp);                     
+   /*---------- FND OUTPUT ----------*/
   }
   /* USER CODE END 3 */
 }
@@ -347,6 +344,51 @@ static void MX_ADC1_Init(void)
 }
 
 /**
+  * @brief TIM2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM2_Init(void)
+{
+
+  /* USER CODE BEGIN TIM2_Init 0 */
+
+  /* USER CODE END TIM2_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM2_Init 1 */
+
+  /* USER CODE END TIM2_Init 1 */
+  htim2.Instance = TIM2;
+  htim2.Init.Prescaler = 840-1;
+  htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim2.Init.Period = 100-1;
+  htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim2, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM2_Init 2 */
+
+  /* USER CODE END TIM2_Init 2 */
+
+}
+
+/**
   * @brief TIM3 Initialization Function
   * @param None
   * @retval None
@@ -365,7 +407,7 @@ static void MX_TIM3_Init(void)
 
   /* USER CODE END TIM3_Init 1 */
   htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 840-1;
+  htim3.Init.Prescaler = 8400-1;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim3.Init.Period = 100-1;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -450,10 +492,36 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)
 	g_ADC_Value = HAL_ADC_GetValue(&hadc1);
 }
 
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	g_TIM3_Status = 1;																// TIM status HIGH
+	if(htim == &htim3)
+	{
+	g_TIM3_Status = TIM3_IT_OCCURRED;
+	}
+
+	else if(htim == &htim2)
+	{
+		if(FND_Status == FND_INITIALIZE)
+		{
+			FND_Status = FND_LEFT_ON;
+			FND_COM_LEFT_CLEAR
+			NUM_DISPLAY(FND_10disp);
+		}
+
+		else if(FND_Status == FND_LEFT_ON)
+		{
+			FND_Status = FND_RIGHT_ON;
+			FND_COM_RIGHT_CLEAR
+			NUM_DISPLAY(FND_1disp);
+		}
+
+		else
+			FND_Status = FND_INITIALIZE;
+	}
 }
+
+
 
 /* USER CODE END 4 */
 

@@ -1,10 +1,10 @@
-11:09:43 **** Incremental Build of configuration Debug for project F401_ADC_Test02 ****
+09:54:57 **** Incremental Build of configuration Debug for project F401_ADC_Test02 ****
 make -j4 all 
 arm-none-eabi-size   F401_ADC_Test02.elf 
    text	   data	    bss	    dec	    hex	filename
-  11988	     20	   1724	  13732	   35a4	F401_ADC_Test02.elf
+  12188	     20	   1796	  14004	   36b4	F401_ADC_Test02.elf
 Finished building: default.size.stdout
  
 
-11:09:46 Build Finished. 0 errors, 0 warnings. (took 2s.780ms)
+09:54:58 Build Finished. 0 errors, 0 warnings. (took 793ms)
 
