@@ -129,7 +129,7 @@ uint8_t FND_Status = 0;
 
 
 
-void NUM_SEG_DISPLAY(uint8_t Disp_Seg_Num)
+void NUM_DISPLAY(uint8_t Disp_Seg_Num)
 	{
 		switch(Disp_Seg_Num)
 		{
@@ -504,14 +504,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		{
 			FND_Status = FND_LEFT_ON;
 			FND_COM_LEFT_ON
-			NUM_SEG_DISPLAY(FND_10disp);
+			NUM_DISPLAY(FND_10disp);
 		}
 
 		else if(FND_Status == FND_LEFT_ON)
 		{
 			FND_Status = FND_RIGHT_ON;
 			FND_COM_RIGHT_ON
-			NUM_SEG_DISPLAY(FND_1disp);
+			NUM_DISPLAY(FND_1disp);
 		}
 
 		else

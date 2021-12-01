@@ -1,10 +1,20 @@
-09:54:57 **** Incremental Build of configuration Debug for project F401_ADC_Test02 ****
+13:41:55 **** Incremental Build of configuration Debug for project F401_ADC_Test02 ****
 make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F401xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "F401_ADC_Test02.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\02_My Project\GitHub\STM32F401_Project\F401_ADC\F401_ADC_Test02\STM32F401RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="F401_ADC_Test02.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: F401_ADC_Test02.elf
+ 
 arm-none-eabi-size   F401_ADC_Test02.elf 
+arm-none-eabi-objdump -h -S  F401_ADC_Test02.elf  > "F401_ADC_Test02.list"
+arm-none-eabi-objcopy  -O binary  F401_ADC_Test02.elf  "F401_ADC_Test02.bin"
    text	   data	    bss	    dec	    hex	filename
   12188	     20	   1796	  14004	   36b4	F401_ADC_Test02.elf
 Finished building: default.size.stdout
  
+Finished building: F401_ADC_Test02.bin
+ 
+Finished building: F401_ADC_Test02.list
+ 
 
-09:54:58 Build Finished. 0 errors, 0 warnings. (took 793ms)
+13:41:58 Build Finished. 0 errors, 0 warnings. (took 3s.103ms)
 

@@ -32,13 +32,13 @@
 #define FND_RIGHT_ON	2
 #define TIM3_IT_OCCURRED 	1
 #define TIM3_IT_WAITING		0
-#define	FND_COM_LEFT_ON			HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_SET); \
+#define	FND_COM_LEFT_CLEAR		HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_SET); \
 								HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_RESET); \
 								HAL_GPIO_WritePin(FND_DOTC_PORT_GPIO_Port, FND_DOTC_PORT_Pin, GPIO_PIN_SET);\
 								HAL_GPIO_WritePin(GPIOA, FND_DOT_PORT_Pin, GPIO_PIN_RESET);
 
 
-#define	FND_COM_RIGHT_ON		HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_SET); \
+#define	FND_COM_RIGHT_CLEAR		HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_SET); \
 								HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_RESET);
 
 #define FND_SEG_NUM0_DISP	  HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
@@ -129,7 +129,7 @@ uint8_t FND_Status = 0;
 
 
 
-void NUM_SEG_DISPLAY(uint8_t Disp_Seg_Num)
+void NUM_DISPLAY(uint8_t Disp_Seg_Num)
 	{
 		switch(Disp_Seg_Num)
 		{
@@ -495,7 +495,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if(htim == &htim3)
 	{
-		g_TIM3_Status = TIM3_IT_OCCURRED;
+	g_TIM3_Status = TIM3_IT_OCCURRED;
 	}
 
 	else if(htim == &htim2)
@@ -503,15 +503,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		if(FND_Status == FND_INITIALIZE)
 		{
 			FND_Status = FND_LEFT_ON;
-			FND_COM_LEFT_ON
-			NUM_SEG_DISPLAY(FND_10disp);
+			FND_COM_LEFT_CLEAR
+			NUM_DISPLAY(FND_10disp);
 		}
 
 		else if(FND_Status == FND_LEFT_ON)
 		{
 			FND_Status = FND_RIGHT_ON;
-			FND_COM_RIGHT_ON
-			NUM_SEG_DISPLAY(FND_1disp);
+			FND_COM_RIGHT_CLEAR
+			NUM_DISPLAY(FND_1disp);
 		}
 
 		else
