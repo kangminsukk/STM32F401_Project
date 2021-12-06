@@ -1,0 +1,10 @@
+18:23:40 **** Incremental Build of configuration Debug for project F401_I2C_test01 ****
+make -j4 all 
+arm-none-eabi-size   F401_I2C_test01.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13236	     20	   1652	  14908	   3a3c	F401_I2C_test01.elf
+Finished building: default.size.stdout
+ 
+
+18:23:41 Build Finished. 0 errors, 0 warnings. (took 781ms)
+
