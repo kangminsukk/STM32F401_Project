@@ -27,63 +27,66 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define	FND_COM_LEFT_CLEAR	  	HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_SET); \
-								                HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_RESET); \
-								                HAL_GPIO_WritePin(FND_RIGHT_DOT_PORT_GPIO_Port, FND_RIGHT_DOT_PORT_Pin, GPIO_PIN_RESET); \
-  	  	  	  	  	  	  	  	HAL_GPIO_WritePin(FND_LEFT_DOT_PORT_GPIO_Port, FND_LEFT_DOT_PORT_Pin, GPIO_PIN_SET); \
-  	  	  	  	  	  	  	  	HAL_GPIO_WritePin(GPIOA, FND_DOT_PORT_Pin, GPIO_PIN_RESET);
+#define I2C_SLAVE_ADDRESS	I2C_Slave_Address
 
-#define	FND_COM_RIGHT_CLEAR 		HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_SET); \
-								                HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_RESET); \
-								                HAL_GPIO_WritePin(FND_RIGHT_DOT_PORT_GPIO_Port, FND_RIGHT_DOT_PORT_Pin, GPIO_PIN_SET); \
-  	  	  	  	  	  	  	  	HAL_GPIO_WritePin(FND_LEFT_DOT_PORT_GPIO_Port, FND_LEFT_DOT_PORT_Pin, GPIO_PIN_RESET); \
-  	  	  	  	  	  	  	  	HAL_GPIO_WritePin(GPIOA, FND_DOT_PORT_Pin, GPIO_PIN_RESET);
+#define	FND_COM_LEFT_ON  	     	  HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_SET); \
+								                  HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_RESET); \
+								                  HAL_GPIO_WritePin(FND_RIGHT_DOT_PORT_GPIO_Port, FND_RIGHT_DOT_PORT_Pin, GPIO_PIN_RESET); \
+  	  	  	  	  	  	  	  	  HAL_GPIO_WritePin(FND_LEFT_DOT_PORT_GPIO_Port, FND_LEFT_DOT_PORT_Pin, GPIO_PIN_SET); \
+  	  	  	  	  	  	  	  	  HAL_GPIO_WritePin(GPIOA, FND_DOT_PORT_Pin, GPIO_PIN_RESET);
 
-#define FND_SEG_NUM0_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
-					              	      HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET); \
-				                			  HAL_GPIO_WritePin(GPIOB, FND_G_PORT_Pin, GPIO_PIN_SET);
+#define	FND_COM_RIGHT_ON	        HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_SET); \
+								                  HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(FND_RIGHT_DOT_PORT_GPIO_Port, FND_RIGHT_DOT_PORT_Pin, GPIO_PIN_SET); \
+                                  HAL_GPIO_WritePin(FND_LEFT_DOT_PORT_GPIO_Port, FND_LEFT_DOT_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOA, FND_DOT_PORT_Pin, GPIO_PIN_RESET);
 
-#define FND_SEG_NUM1_DISP	      HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin|FND_C_PORT_Pin, GPIO_PIN_RESET); \
-					                		  HAL_GPIO_WritePin(GPIOA, FND_A_PORT_Pin, GPIO_PIN_SET); \
-			                				  HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_SET);
+#define FND_SEG_NUM0_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_G_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM2_DISP	      HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
-					              	      HAL_GPIO_WritePin(GPIOB, FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET); \
-						                    HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin, GPIO_PIN_SET); \
-						                    HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin, GPIO_PIN_SET);
+#define FND_SEG_NUM1_DISP	        HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin|FND_C_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOA, FND_A_PORT_Pin, GPIO_PIN_SET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM3_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
-					              	      HAL_GPIO_WritePin(GPIOB, FND_D_PORT_Pin|FND_G_PORT_Pin, GPIO_PIN_RESET); \
-						                    HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_SET);
+#define FND_SEG_NUM2_DISP	        HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin, GPIO_PIN_SET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM4_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin, GPIO_PIN_RESET); \
-                                HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_G_PORT_Pin, GPIO_PIN_RESET); \
-                                HAL_GPIO_WritePin(GPIOA, FND_A_PORT_Pin, GPIO_PIN_SET); \
-                                HAL_GPIO_WritePin(GPIOB, FND_E_PORT_Pin|FND_D_PORT_Pin, GPIO_PIN_SET);
+#define FND_SEG_NUM3_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_D_PORT_Pin|FND_G_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM5_DISP    	  HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
-                                HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin, GPIO_PIN_RESET); \
-                                HAL_GPIO_WritePin(GPIOB, FND_E_PORT_Pin, GPIO_PIN_SET); \
-                                HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin, GPIO_PIN_SET);
+#define FND_SEG_NUM4_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_G_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOA, FND_A_PORT_Pin, GPIO_PIN_SET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_E_PORT_Pin|FND_D_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM6_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
-                                HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET); \
-                                HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin, GPIO_PIN_SET);
+#define FND_SEG_NUM5_DISP      	  HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_E_PORT_Pin, GPIO_PIN_SET); \
+                                  HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM7_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
-                                HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin, GPIO_PIN_RESET); \
-                                HAL_GPIO_WritePin(GPIOB, FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_SET); \
+#define FND_SEG_NUM6_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM8_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
-						                    HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET);
+#define FND_SEG_NUM7_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_SET); \
 
-#define FND_SEG_NUM9_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
-                                HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_G_PORT_Pin|FND_D_PORT_Pin, GPIO_PIN_RESET); \
-                                HAL_GPIO_WritePin(GPIOB, FND_E_PORT_Pin, GPIO_PIN_SET);
+#define FND_SEG_NUM8_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+						                      HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET);
+
+#define FND_SEG_NUM9_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_G_PORT_Pin|FND_D_PORT_Pin, GPIO_PIN_RESET); \
+                                  HAL_GPIO_WritePin(GPIOB, FND_E_PORT_Pin, GPIO_PIN_SET);
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+uint8_t I2C_Status = 0;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -108,7 +111,45 @@ static void MX_I2C1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void NUM_SEG_DISPLAY(uint8_t Disp_Seg_Num)
+{
+	switch(Disp_Seg_Num)
+	{
+	case 0:
+		FND_SEG_NUM0_DISP
+		break;
+	case 1:
+		FND_SEG_NUM1_DISP
+		break;
+	case 2:
+		FND_SEG_NUM2_DISP
+		break;
+	case 3:
+		FND_SEG_NUM3_DISP
+		break;
+	case 4:
+		FND_SEG_NUM4_DISP
+		break;
+	case 5:
+		FND_SEG_NUM5_DISP
+		break;
+	case 6:
+		FND_SEG_NUM6_DISP
+		break;
+	case 7:
+		FND_SEG_NUM7_DISP
+		break;
+	case 8:
+		FND_SEG_NUM8_DISP
+		break;
+	case 9:
+		FND_SEG_NUM9_DISP
+		break;
+	default:
+		FND_SEG_NUM0_DISP
+		break;
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -118,7 +159,8 @@ static void MX_I2C1_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+ uint8_t I2C_Slave_Address = 0x44 << 1;
+ uint8_t I2C_data[] = {1};
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -141,7 +183,6 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -151,12 +192,29 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  	  FND_COM_LEFT_CLEAR
-	  	  FND_SEG_NUM8_DISP
-	  	  HAL_Delay(1000);
-	  	  FND_COM_RIGHT_CLEAR
-	  	  FND_SEG_NUM8_DISP
-	  	  HAL_Delay(1000);
+	 // if(I2C_Status == 1)
+
+		  if(HAL_I2C_Master_Transmit(&hi2c1, I2C_Slave_Address, I2C_data, 2, 1000)!= HAL_OK)
+		  {
+		  FND_COM_LEFT_ON
+		  FND_SEG_NUM8_DISP
+		  HAL_Delay(1000);
+		  FND_COM_RIGHT_ON
+		  FND_SEG_NUM8_DISP
+		  HAL_Delay(1000);
+		  }
+
+
+//	  if((HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin)==0)&&(User_Button_Status == 0))
+//	  {
+//
+//	  }
+//
+//	  else if(HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin)==1)
+//	  {
+//
+//	  }
+
   }
   /* USER CODE END 3 */
 }
@@ -223,7 +281,7 @@ static void MX_I2C1_Init(void)
   hi2c1.Instance = I2C1;
   hi2c1.Init.ClockSpeed = 100000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
-  hi2c1.Init.OwnAddress1 = 0;
+  hi2c1.Init.OwnAddress1 = 136;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
   hi2c1.Init.OwnAddress2 = 0;
@@ -302,7 +360,10 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+//void HAL_I2C_MasterTxCpltCallback (I2C_HandleTypeDef * hi2c)
+//{
+//	I2C_Status = 1;
+//}
 /* USER CODE END 4 */
 
 /**
