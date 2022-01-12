@@ -8,6 +8,7 @@
 		<item key="caseSensitive" value="false"/>
 		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
+			<item value="HAL_TIM_IRQHandler"/>
 			<item value="HAL_I2C_Master_Transmit_IT"/>
 			<item value="HAL_I2C_MasterRxCpltCallback"/>
 			<item value="I2C_MasterTransmit_TXE"/>

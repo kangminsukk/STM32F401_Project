@@ -27,38 +27,45 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define I2C_SLAVE_ADDRESS	I2C_Slave_Address
+#define I2C1_SLAVE_ADDRESS	I2C1_Slave_Address
+#define BUTTON_PRESS 	1
+#define INITALIZE		0
+#define WAIT			0
+#define READY			1
+#define BUTTON_RELEASE  0
 
-#define	FND_COM_LEFT_ON  	     	  HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_SET); \
-								                  HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_RESET); \
-								                  HAL_GPIO_WritePin(FND_RIGHT_DOT_PORT_GPIO_Port, FND_RIGHT_DOT_PORT_Pin, GPIO_PIN_RESET); \
+#define FND_LEFT_DOT_ON			  HAL_GPIO_WritePin(FND_RIGHT_DOT_PORT_GPIO_Port, FND_RIGHT_DOT_PORT_Pin, GPIO_PIN_RESET); \
   	  	  	  	  	  	  	  	  HAL_GPIO_WritePin(FND_LEFT_DOT_PORT_GPIO_Port, FND_LEFT_DOT_PORT_Pin, GPIO_PIN_SET); \
   	  	  	  	  	  	  	  	  HAL_GPIO_WritePin(GPIOA, FND_DOT_PORT_Pin, GPIO_PIN_RESET);
 
-#define	FND_COM_RIGHT_ON	        HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_SET); \
-								                  HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_RESET); \
-                                  HAL_GPIO_WritePin(FND_RIGHT_DOT_PORT_GPIO_Port, FND_RIGHT_DOT_PORT_Pin, GPIO_PIN_SET); \
-                                  HAL_GPIO_WritePin(FND_LEFT_DOT_PORT_GPIO_Port, FND_LEFT_DOT_PORT_Pin, GPIO_PIN_RESET); \
-                                  HAL_GPIO_WritePin(GPIOA, FND_DOT_PORT_Pin, GPIO_PIN_RESET);
+#define FND_RIGHT_DOT_ON	      HAL_GPIO_WritePin(FND_RIGHT_DOT_PORT_GPIO_Port, FND_RIGHT_DOT_PORT_Pin, GPIO_PIN_SET); \
+  	  	  	  	  	  	  	  	  HAL_GPIO_WritePin(FND_LEFT_DOT_PORT_GPIO_Port, FND_LEFT_DOT_PORT_Pin, GPIO_PIN_RESET); \
+  	  	  	  	  	  	  	  	  HAL_GPIO_WritePin(GPIOA, FND_DOT_PORT_Pin, GPIO_PIN_RESET);
 
-#define FND_SEG_NUM0_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+#define	FND_COM_LEFT_ON  	      HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_SET); \
+								  HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_RESET); \
+
+#define	FND_COM_RIGHT_ON	      HAL_GPIO_WritePin(GPIOC, FND_RIGHT_PORT_Pin, GPIO_PIN_SET); \
+								  HAL_GPIO_WritePin(GPIOC, FND_LEFT_PORT_Pin, GPIO_PIN_RESET); \
+
+#define FND_SEG_NUM0_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_G_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM1_DISP	        HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin|FND_C_PORT_Pin, GPIO_PIN_RESET); \
+#define FND_SEG_NUM1_DISP	      HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin|FND_C_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOA, FND_A_PORT_Pin, GPIO_PIN_SET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM2_DISP	        HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+#define FND_SEG_NUM2_DISP	      HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin, GPIO_PIN_SET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM3_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+#define FND_SEG_NUM3_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_D_PORT_Pin|FND_G_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM4_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin, GPIO_PIN_RESET); \
+#define FND_SEG_NUM4_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_G_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOA, FND_A_PORT_Pin, GPIO_PIN_SET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_E_PORT_Pin|FND_D_PORT_Pin, GPIO_PIN_SET);
@@ -68,25 +75,40 @@
                                   HAL_GPIO_WritePin(GPIOB, FND_E_PORT_Pin, GPIO_PIN_SET); \
                                   HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM6_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+#define FND_SEG_NUM6_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOA, FND_B_PORT_Pin, GPIO_PIN_SET);
 
-#define FND_SEG_NUM7_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+#define FND_SEG_NUM7_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_SET); \
 
-#define FND_SEG_NUM8_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
-						                      HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET);
+#define FND_SEG_NUM8_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+						          HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_D_PORT_Pin|FND_G_PORT_Pin|FND_E_PORT_Pin, GPIO_PIN_RESET);
 
-#define FND_SEG_NUM9_DISP	        HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
+#define FND_SEG_NUM9_DISP	      HAL_GPIO_WritePin(GPIOA, FND_C_PORT_Pin|FND_B_PORT_Pin|FND_A_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_F_PORT_Pin|FND_G_PORT_Pin|FND_D_PORT_Pin, GPIO_PIN_RESET); \
                                   HAL_GPIO_WritePin(GPIOB, FND_E_PORT_Pin, GPIO_PIN_SET);
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-uint8_t I2C_Status = 0;
+ uint8_t I2C1_Slave_Address = 0x44 << 1;
+ uint8_t I2C1_TX[2] = {0x2c, 0x06};
+ uint8_t I2C1_RX[6] = {0,};
+ uint16_t I2C1_Temp = 0;
+ uint16_t I2C1_Humi = 0;
+ uint8_t Button_Count = 0;
+ uint8_t RH = 0;
+ uint8_t Degree_Celsius = 0;
+ uint8_t User_Button_Status = 0;
+ uint8_t disp10 = 0;
+ uint8_t disp1 = 0;
+ uint8_t I2C1_Calc = 0;
+ uint8_t I2C1_Communication = 0;
+ uint8_t I2C1_Data = 1;
+ uint8_t FND_vector = 0;
+ uint8_t User_Button_Value = 0;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -97,6 +119,8 @@ uint8_t I2C_Status = 0;
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
 
+TIM_HandleTypeDef htim3;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -105,6 +129,7 @@ I2C_HandleTypeDef hi2c1;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -150,6 +175,90 @@ void NUM_SEG_DISPLAY(uint8_t Disp_Seg_Num)
 		break;
 	}
 }
+void I2C1_FND_Calc(uint8_t I2C1_data)
+{
+	disp10 = I2C1_data / 10;
+	disp1 = I2C1_data % 10;
+}
+
+void I2C1_Data_Calc()
+{
+	if(I2C1_Calc == 0)
+	{
+		Degree_Celsius = (-45 + (175*(I2C1_Temp / 65535.0)));
+		I2C1_FND_Calc(Degree_Celsius);
+		FND_LEFT_DOT_ON
+		I2C1_Calc = 1;
+	}
+
+	else if(I2C1_Calc == 1)
+	{
+		RH = (100 * (I2C1_Humi / 65535.0));
+		I2C1_FND_Calc(RH);
+		FND_RIGHT_DOT_ON
+		I2C1_Data = 1;
+		I2C1_Calc = 0;
+	}
+}
+
+void I2C1_Master_Data()
+{
+	if(HAL_I2C_Master_Receive(&hi2c1, I2C1_SLAVE_ADDRESS, I2C1_RX, 6, 10000) == HAL_OK)
+	{
+		I2C1_Temp = ((I2C1_RX[0] << 8) + I2C1_RX[1]);
+		I2C1_Humi = ((I2C1_RX[3] << 8) + I2C1_RX[4]);
+	}
+
+	else
+	{
+		I2C1_Temp = 0;
+		I2C1_Humi = 0;
+	}
+}
+
+void I2C1_Communication_Ctrl()
+{
+	if(I2C1_Communication == READY && I2C1_Data == READY)
+	{
+		if(HAL_I2C_Master_Transmit(&hi2c1, I2C1_SLAVE_ADDRESS, I2C1_TX, 2, 10000) == HAL_OK)
+		{
+			I2C1_Master_Data();
+		}
+
+		else
+		{
+			I2C1_Temp = 0;
+			I2C1_Humi = 0;
+		}
+	}
+	I2C1_Communication = WAIT;
+	I2C1_Data = WAIT;
+
+	I2C1_Data_Calc();
+}
+
+int User_Button_Press_Release_Ctrl(uint8_t User_Button_Ctrl)
+{
+   if((HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin)==0)&&(User_Button_Status == 0))
+   {
+	   Button_Count++;
+	   if(Button_Count > 0)
+	   {
+		   User_Button_Status = 1;
+		   I2C1_Communication = READY;
+		   User_Button_Ctrl = BUTTON_PRESS;
+	   }
+   }
+
+   else if(HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin)==1)
+   {
+	   Button_Count = INITALIZE;
+	   User_Button_Status = 0;
+	   User_Button_Ctrl = BUTTON_RELEASE;
+   }
+
+   return User_Button_Ctrl;
+}
 /* USER CODE END 0 */
 
 /**
@@ -159,8 +268,6 @@ void NUM_SEG_DISPLAY(uint8_t Disp_Seg_Num)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
- uint8_t I2C_Slave_Address = 0x44 << 1;
- uint8_t I2C_data[] = {1};
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -182,7 +289,9 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim3);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -192,29 +301,12 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	 // if(I2C_Status == 1)
+	  User_Button_Value = User_Button_Press_Release_Ctrl(INITALIZE);
 
-		  if(HAL_I2C_Master_Transmit(&hi2c1, I2C_Slave_Address, I2C_data, 2, 1000)!= HAL_OK)
-		  {
-		  FND_COM_LEFT_ON
-		  FND_SEG_NUM8_DISP
-		  HAL_Delay(1000);
-		  FND_COM_RIGHT_ON
-		  FND_SEG_NUM8_DISP
-		  HAL_Delay(1000);
-		  }
-
-
-//	  if((HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin)==0)&&(User_Button_Status == 0))
-//	  {
-//
-//	  }
-//
-//	  else if(HAL_GPIO_ReadPin(USER_BUTTON_GPIO_Port, USER_BUTTON_Pin)==1)
-//	  {
-//
-//	  }
-
+	  if(User_Button_Value == BUTTON_PRESS)
+	  {
+		  I2C1_Communication_Ctrl();
+	  }
   }
   /* USER CODE END 3 */
 }
@@ -298,6 +390,51 @@ static void MX_I2C1_Init(void)
 }
 
 /**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 840-1;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 100-1;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -360,10 +497,22 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-//void HAL_I2C_MasterTxCpltCallback (I2C_HandleTypeDef * hi2c)
-//{
-//	I2C_Status = 1;
-//}
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(FND_vector == 0)
+	{
+		FND_COM_LEFT_ON
+		NUM_SEG_DISPLAY(disp10);
+		FND_vector = 1;
+	}
+
+	else if(FND_vector == 1)
+	{
+		FND_COM_RIGHT_ON
+		NUM_SEG_DISPLAY(disp1);
+		FND_vector = 0;
+	}
+}
 /* USER CODE END 4 */
 
 /**
