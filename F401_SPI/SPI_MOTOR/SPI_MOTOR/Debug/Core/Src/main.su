@@ -1,0 +1,7 @@
+main.c:71:6:MOTOR_Direction_Right	16	static
+main.c:77:6:MOTOR_Direction_Left	16	static
+main.c:88:5:main	8	static
+main.c:156:6:SystemClock_Config	88	static
+main.c:201:13:MX_SPI1_Init	8	static
+main.c:239:13:MX_GPIO_Init	40	static
+main.c:274:6:Error_Handler	4	static,ignoring_inline_asm

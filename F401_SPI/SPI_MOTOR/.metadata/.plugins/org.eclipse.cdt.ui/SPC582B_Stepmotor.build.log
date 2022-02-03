@@ -1,0 +1,9 @@
+15:53:25 **** Build of configuration Default for project SPC582B_Stepmotor ****
+make -j4 all 
+Cannot run program "make": Launching failed
+
+Error: Program "make" not found in PATH
+PATH=[C:\SPC5Studio-6.0\eclipse\configuration\org.eclipse.osgi\652\0\.cp\gnutools;C:/ST/STM32CubeIDE_1.7.0/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.100.202110150814/jre/bin/client;C:/ST/STM32CubeIDE_1.7.0/STM32CubeIDE//plugins/com.st.stm32cube.ide.jre.win64_2.0.100.202110150814/jre/bin;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Samsung\SamsungLink\AllShare Framework DMS\bin\;C:\WINDOWS\System32\OpenSSH\;C:\MinGW\bin;C:\Program Files\Git\cmd;C:\Cadence\SPB_16.5\OpenAccess\bin\win32\opt;C:\Cadence\SPB_16.5\tools\Capture;C:\Cadence\SPB_16.5\tools\PSpice\Library;C:\Cadence\SPB_16.5\tools\PSpice;C:\Cadence\SPB_16.5\tools\specctra\bin;C:\Cadence\SPB_16.5\tools\fet\bin;C:\Cadence\SPB_16.5\tools\libutil\bin;C:\Cadence\SPB_16.5\tools\bin;C:\Cadence\SPB_16.5\tools\pcb\bin;C:\Users\kangm\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Bandizip\;C:\02_My Project\armgcc.dir\GNU\10 2021.10\bin;C:\02_My Project\armgcc.dir\GnuWin32\bin;C:\02_My Project\armgcc.dir\OpenOCD-20210729-0.11.0\bin;C:\Users\kangm\AppData\Local\Programs\Microsoft VS Code\bin;C:\02_My Project\GitHub\STM32F401_Project\F401_SPI\SPI_MOTOR\SPI_MOTOR]
+
+15:53:25 Build Failed. 1 errors, 0 warnings. (took 277ms)
+
