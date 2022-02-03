@@ -94,7 +94,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
  uint8_t I2C1_Slave_Address = 0x44 << 1;
- uint8_t I2C1_TX[2] = {0x2c, 0x06};
+ uint8_t I2C1_TX[2] = {0x2C, 0x06};
  uint8_t I2C1_RX[6] = {0,};
  uint16_t I2C1_Temp = 0;
  uint16_t I2C1_Humi = 0;
@@ -273,7 +273,8 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+
+	HAL_Init();
 
   /* USER CODE BEGIN Init */
 
